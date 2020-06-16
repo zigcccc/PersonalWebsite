@@ -42,12 +42,13 @@ export const StyledCTA = styled.a<Pick<CTAProps, 'size' | 'lightText'>>`
 	background: linear-gradient(90deg, #ecb22f 0%, #ce982c 100%);
 	box-shadow: 0px 18px 36px -10px rgba(0, 0, 0, 0.12);
 	border-radius: 0.2em;
-	font-family: Fira Code;
+	font-family: ${({ theme }) => theme.font__heading};
 	font-weight: bold;
 	font-size: ${({ size }) => sizeMapper[size]};
 	color: ${({ theme }) => theme.color__gray};
 	transition: 450ms ease-in-out all;
 	text-decoration: none;
+	appereance: none;
 
 	${({ type }) => type === 'outlined' && lightCtaCss};
 
