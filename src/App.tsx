@@ -1,26 +1,59 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { ThemeProvider } from 'styled-components';
 
-export default App;
+import { Header, Banner } from './components/Elements';
+
+import { GlobalStyle } from './styles/GlobalStyles';
+import {
+	theme_base,
+	theme_light,
+	theme_dark,
+	ThemeOptionType,
+} from './styles/theme';
+
+const sections = [
+	{ label: 'Who?', id: 'who' },
+	{ label: 'What?', id: 'what' },
+	{ label: 'Done!', id: 'done' },
+];
+
+export const App = () => {
+	const [theme, setTheme] = React.useState('light' as ThemeOptionType);
+
+	const handleThemeSwitch = (event: any) => {
+		localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light');
+		setTheme(theme === 'light' ? 'dark' : 'light');
+	};
+
+	const themeConfig = React.useMemo(
+		() => ({
+			...theme_base,
+			...(theme === 'light' ? theme_light : theme_dark),
+		}),
+		[theme]
+	);
+
+	React.useEffect(() => {
+		const userSetTheme = localStorage.getItem('theme') as ThemeOptionType;
+		if (userSetTheme) {
+			setTheme(userSetTheme);
+		} else {
+			setTheme(
+				window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
+			);
+		}
+	}, []);
+
+	return (
+		<ThemeProvider theme={themeConfig}>
+			<GlobalStyle theme={themeConfig} />
+			<Header
+				onThemeSwitch={handleThemeSwitch}
+				theme={theme}
+				navItems={sections}
+			/>
+			<Banner theme={theme} />
+		</ThemeProvider>
+	);
+};
