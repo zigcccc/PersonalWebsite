@@ -7,7 +7,6 @@ export const StyledTechBadgeContainer = styled.div`
 
 	@media screen and (max-width: 768px) {
 		width: calc(100vw - 3rem);
-		overflow-x: hidden;
 	}
 
 	&:nth-child(1) {
