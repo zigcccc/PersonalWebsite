@@ -1,6 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
+import { StyledColumn } from './Styles';
+
 export type TColumnSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 export type TColumnOffset = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
 
@@ -11,12 +13,12 @@ export interface ColumnProps {
 }
 
 export const Column = ({ children, size, offset }: ColumnProps) => (
-	<div
+	<StyledColumn
 		className={classNames('column col-sm-12', {
 			[`col-md-${size}`]: size,
 			[`col-md-offset-${offset}`]: offset,
 		})}
 	>
 		{children}
-	</div>
+	</StyledColumn>
 );

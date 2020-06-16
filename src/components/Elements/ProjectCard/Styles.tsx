@@ -12,6 +12,10 @@ export const StyledProjectCard = styled.article<
 	border-radius: 10px;
 	color: ${({ dark, theme }) => (dark ? theme.color__gray : theme.color__white)};
 
+	@media screen and (max-width: 768px) {
+		grid-template-columns: 1fr;
+	}
+
 	&:hover {
 		.project-card--artwork {
 			transform: translateY(0) scale(1.01);
@@ -69,5 +73,8 @@ export const StyledProjectCard = styled.article<
 	.project-card--cta {
 		display: flex;
 		justify-content: flex-end;
+		@media screen and (max-width: 768px) {
+			margin-top: 1rem;
+		}
 	}
 `;

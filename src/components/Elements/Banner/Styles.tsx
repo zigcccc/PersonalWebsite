@@ -18,12 +18,21 @@ export const StyledBanner = styled.section`
 		z-index: 2;
 	}
 
+	@media screen and (max-width: 768px) {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+
 	h1 {
 		font-family: ${({ theme }) => theme.font__heading};
 		font-size: 42px;
 		line-height: 1.618;
 		color: ${({ theme }) => theme.fg};
 		margin-bottom: 3.125rem;
+
+		@media screen and (max-width: 768px) {
+			font-size: 1.8rem;
+		}
 
 		span {
 			font-weight: 700;

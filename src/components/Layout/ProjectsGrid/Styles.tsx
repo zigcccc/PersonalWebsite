@@ -24,4 +24,14 @@ export const StyledProjectsGrid = styled.div`
 			grid-area: card4;
 		}
 	}
+
+	@media screen and (max-width: 768px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto auto auto;
+		grid-template-areas:
+			'card1'
+			'card2'
+			'card3'
+			'card4';
+	}
 `;

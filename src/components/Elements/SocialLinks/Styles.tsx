@@ -9,6 +9,10 @@ export const StyledSocialLinks = styled.div`
 	background: ${({ theme }) => convertHexToRGBA(theme.bg, 10)};
 	backdrop-filter: blur(45px);
 
+	@media screen and (max-width: 768px) {
+		flex-wrap: wrap;
+	}
+
 	.social-link {
 		flex: 1;
 		display: flex;
@@ -20,7 +24,15 @@ export const StyledSocialLinks = styled.div`
 		text-decoration: none;
 		font-family: ${({ theme }) => theme.font__heading};
     color: ${({ theme }) => theme.gray__middle};
-    transition: ${({ theme }) => theme.transition__default};
+		transition: ${({ theme }) => theme.transition__default};
+		
+		@media screen and (max-width: 768px) {
+			min-width: 50%;
+			padding: 2rem 0;
+			&:last-child {
+				display: none;
+			}
+		}
 
 		&:hover {
 			color: ${({ theme }) => theme.color__primary};

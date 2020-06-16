@@ -11,10 +11,22 @@ export const StyledHeader = styled.header`
 	justify-content: space-between;
 	padding: 1.25rem 1.55rem;
 
+	& > svg {
+		@media screen and (max-width: 768px) {
+			max-width: 50%;
+		}
+	}
+
 	.nav {
 		margin: 0 0.625rem;
 		display: flex;
 		align-items: center;
+
+		.cta {
+			@media screen and (max-width: 768px) {
+				display: none;
+			}
+		}
 
 		&--item {
 			font-size: 1rem;
@@ -22,6 +34,10 @@ export const StyledHeader = styled.header`
 			font-weight: 700;
 			font-family: ${({ theme }) => theme.font__heading};
 			transition: ${({ theme }) => theme.transition__default};
+
+			@media screen and (max-width: 768px) {
+				display: none;
+			}
 
 			&:last-of-type {
 				margin-right: 1.56em;

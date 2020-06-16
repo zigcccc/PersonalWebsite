@@ -121,8 +121,12 @@ export const App = () => {
 			/>
 			<Banner theme={theme} />
 			<Section id="who">
-				<SubHeading>Hello, I'm Žiga</SubHeading>
-				<Heading>Who am I?</Heading>
+				<Row>
+					<Column size={12}>
+						<SubHeading>Hello, I'm Žiga</SubHeading>
+						<Heading>Who am I?</Heading>
+					</Column>
+				</Row>
 				<Row vAlign="bottom">
 					<Column size={6}>
 						<Paragraph>
@@ -188,8 +192,12 @@ export const App = () => {
 				</CTA>
 			</Section>
 			<Section id="contact">
-				<SubHeading>Contact forms are boring</SubHeading>
-				<Heading>Connect with me</Heading>
+				<Row>
+					<Column size={12}>
+						<SubHeading>Contact forms are boring</SubHeading>
+						<Heading>Connect with me</Heading>
+					</Column>
+				</Row>
 				<Row vAlign="top">
 					<Column size={6}>
 						<Paragraph>

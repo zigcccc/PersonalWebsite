@@ -7,4 +7,8 @@ export const StyledHeading = styled.h2`
 	line-height: 1.2;
 	margin-bottom: 0.92em;
 	color: ${({ theme }) => theme.fg};
+
+	@media screen and (max-width: 768px) {
+		font-size: 2rem;
+	}
 `;
