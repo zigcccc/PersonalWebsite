@@ -21,12 +21,14 @@ export const theme_light = Object.freeze({
 	fg: theme_base.color__gray,
 	bg: theme_base.color__white,
 	light: theme_base.gray__6,
+	gray__middle: theme_base.gray__3,
 });
 
 export const theme_dark = Object.freeze({
 	fg: theme_base.color__white,
 	bg: theme_base.color__gray,
 	light: `${theme_base.color__dark}42`,
+	gray__middle: theme_base.gray__4,
 });
 
 const ThemeType = { ...theme_base, ...theme_light };

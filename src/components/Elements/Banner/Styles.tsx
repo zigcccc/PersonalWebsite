@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 
 export const StyledBanner = styled.section`
-	height: calc(100vh - 95px);
+	height: calc(100vh - 95px - 175px);
 	background: linear-gradient(
 		122deg,
 		${({ theme }) => theme.bg} 0%,
 		${({ theme }) => theme.light} 100%
 	);
 	padding-top: 95px;
+	padding-bottom: 175px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -47,5 +48,13 @@ export const StyledBanner = styled.section`
 		right: 0;
 		bottom: 0;
 		z-index: 1;
+	}
+
+	.social-links-container {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 2;
 	}
 `;
