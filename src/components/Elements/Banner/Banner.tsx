@@ -10,7 +10,7 @@ export interface BannerProps {
 	theme: 'light' | 'dark';
 }
 
-const socialLinks = [
+export const socialLinks = [
 	{
 		id: 'facebook',
 		label: 'Facebook',

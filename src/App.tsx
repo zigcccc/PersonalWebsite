@@ -3,7 +3,7 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 
 import { CTA, ContactButton } from './components/Buttons';
-import { Header, Banner, TechBadge } from './components/Elements';
+import { Header, Banner, TechBadge, Footer } from './components/Elements';
 import { Section, Row, Column, ProjectsGrid } from './components/Layout';
 import { Heading, SubHeading, Paragraph } from './components/Typography';
 import { ComputerThinking } from './components/Graphics';
@@ -120,7 +120,7 @@ export const App = () => {
 				navItems={sections}
 			/>
 			<Banner theme={theme} />
-			<Section>
+			<Section id="who">
 				<SubHeading>Hello, I'm Žiga</SubHeading>
 				<Heading>Who am I?</Heading>
 				<Row vAlign="bottom">
@@ -129,12 +129,13 @@ export const App = () => {
 							Creative, open-minded and always thirsty for new knowledge.
 						</Paragraph>
 						<Paragraph>
-							I'm a 24 years old <strong>frontend developer</strong> with a tendency
-							towards web development and web design in general. I'm always eager to
-							provide a smooth and pleasant user experience for the end-user of web (or
-							mobile) application. My weapon of choice is <strong>JavaScript</strong>,
-							more specifically <strong>React.js</strong> framework. I'm interested in
-							UX and UI in terms of how we can influence the user through design and
+							I'm a {new Date().getFullYear() - 1996} years old{' '}
+							<strong>frontend developer</strong> with a tendency towards web
+							development and web design in general. I'm always eager to provide a
+							smooth and pleasant user experience for the end-user of web (or mobile)
+							application. My weapon of choice is <strong>JavaScript</strong>, more
+							specifically <strong>React.js</strong> framework. I'm interested in UX
+							and UI in terms of how we can influence the user through design and
 							interactions.{' '}
 						</Paragraph>
 						<CTA onClick={() => null}>Let's talk</CTA>
@@ -144,7 +145,7 @@ export const App = () => {
 					</Column>
 				</Row>
 			</Section>
-			<Section>
+			<Section id="what">
 				<Row vAlign="middle">
 					<Column size={5}>
 						{techStack.map((tech) => (
@@ -174,7 +175,7 @@ export const App = () => {
 					</Column>
 				</Row>
 			</Section>
-			<Section centered>
+			<Section id="done" centered>
 				<SubHeading>Some of my work</SubHeading>
 				<Heading>What have I done so far?</Heading>
 				<ProjectsGrid>
@@ -186,7 +187,7 @@ export const App = () => {
 					My GitHub profile
 				</CTA>
 			</Section>
-			<Section>
+			<Section id="contact">
 				<SubHeading>Contact forms are boring</SubHeading>
 				<Heading>Connect with me</Heading>
 				<Row vAlign="top">
@@ -225,6 +226,7 @@ export const App = () => {
 					</Column>
 				</Row>
 			</Section>
+			<Footer theme={theme} />
 		</ThemeProvider>
 	);
 };

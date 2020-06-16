@@ -11,6 +11,7 @@ export const StyledContactButton = styled.a`
 	padding: 1.5rem;
 	margin-bottom: 1rem;
 	font-family: ${({ theme }) => theme.font__heading};
+	transition: ${({ theme }) => theme.transition__default};
 
 	&:hover {
 		color: ${({ theme }) => theme.fg};
