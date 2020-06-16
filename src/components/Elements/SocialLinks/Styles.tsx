@@ -19,7 +19,8 @@ export const StyledSocialLinks = styled.div`
 		font-size: 0.875rem;
 		text-decoration: none;
 		font-family: ${({ theme }) => theme.font__heading};
-		color: ${({ theme }) => theme.gray__middle};
+    color: ${({ theme }) => theme.gray__middle};
+    transition: ${({ theme }) => theme.transition__default};
 
 		&:hover {
 			color: ${({ theme }) => theme.color__primary};

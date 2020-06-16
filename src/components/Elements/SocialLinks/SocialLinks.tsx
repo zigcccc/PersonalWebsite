@@ -31,6 +31,7 @@ export const SocialLinks = ({ links }: SocialLinksProps) => (
 			<a
 				href={link.url}
 				title={link.label}
+				target="_blank"
 				rel="noopener noreferrer"
 				key={link.id}
 				className="social-link"

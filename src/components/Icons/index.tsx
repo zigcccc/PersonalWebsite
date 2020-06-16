@@ -4,3 +4,4 @@ export * from './LogoMark';
 export * from './Sun';
 export * from './Moon';
 export * from './SocialIcons';
+export * from './TechIcons';

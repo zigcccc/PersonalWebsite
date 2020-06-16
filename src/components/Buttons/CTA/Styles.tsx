@@ -32,6 +32,7 @@ export const StyledCTA = styled.a`
 	font-size: ${({ size }: CTAProps) => sizeMapper[size]};
 	color: ${({ theme }) => theme.color__gray};
 	transition: 450ms ease-in-out all;
+	text-decoration: none;
 
 	${({ type }) => type === 'outlined' && lightCtaCss};
 
