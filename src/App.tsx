@@ -194,9 +194,12 @@ export const App = () => {
 					<Column size={6}>
 						<Paragraph>
 							I always like a good debate (as long as it's not about the politics{' '}
-							<span role="img">‍🤷‍♂️</span>). Whether it's about a new uprising
-							technology, a new idea that's tinkering your mind or about something as
-							common as where to hike on a sunny weekend, I'm up for it.{' '}
+							<span role="img" aria-label="idk">
+								‍🤷‍♂️
+							</span>
+							). Whether it's about a new uprising technology, a new idea that's
+							tinkering your mind or about something as common as where to hike on a
+							sunny weekend, I'm up for it.{' '}
 							<strong>I like to share my knowledge</strong>; I know I've learned the
 							most from asking questings and listening to the experts of this field, so
 							if I can give some of this knowledge back, I am more than happy to do so.
