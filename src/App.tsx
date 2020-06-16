@@ -193,13 +193,13 @@ export const App = () => {
 				<Row vAlign="top">
 					<Column size={6}>
 						<Paragraph>
-							I always like a good debate (as long as it's not about the politics ‍🤷‍♂️).
-							Whether it's about a new uprising technology, a new idea that's tinkering
-							your mind or about something as common as where to hike on a sunny
-							weekend, I'm up for it. <strong>I like to share my knowledge</strong>; I
-							know I've learned the most from asking questings and listening to the
-							experts of this field, so if I can give some of this knowledge back, I am
-							more than happy to do so.
+							I always like a good debate (as long as it's not about the politics{' '}
+							<span role="img">‍🤷‍♂️</span>). Whether it's about a new uprising
+							technology, a new idea that's tinkering your mind or about something as
+							common as where to hike on a sunny weekend, I'm up for it.{' '}
+							<strong>I like to share my knowledge</strong>; I know I've learned the
+							most from asking questings and listening to the experts of this field, so
+							if I can give some of this knowledge back, I am more than happy to do so.
 						</Paragraph>
 						<Paragraph>
 							So, if you think we might have a few words to exchange,{' '}
