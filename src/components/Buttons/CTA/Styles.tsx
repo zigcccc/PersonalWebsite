@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { convertHexToRGBA } from '../../../helpers';
 import { CTAProps } from './CTA';
 
 const lightCtaCss = css`
@@ -14,13 +15,27 @@ const lightCtaCss = css`
 	}
 `;
 
+const dimmedCtaCss = css<Pick<CTAProps, 'lightText'>>`
+	background: none;
+	background-color: ${({ lightText, theme }) =>
+		convertHexToRGBA(lightText ? theme.color__white : theme.color__gray, 15)};
+	box-shadow: none;
+	color: ${({ lightText, theme }) =>
+		lightText ? theme.color__white : theme.color__gray};
+
+	&:hover {
+		cursor: pointer;
+		filter: brightness(1.15);
+	}
+`;
+
 const sizeMapper = {
 	small: '1rem',
 	medium: '1.25rem',
 	large: '1.5rem',
 };
 
-export const StyledCTA = styled.a`
+export const StyledCTA = styled.a<Pick<CTAProps, 'size' | 'lightText'>>`
 	display: inline-flex;
 	flex-direction: row;
 	padding: 1em 2em;
@@ -29,12 +44,14 @@ export const StyledCTA = styled.a`
 	border-radius: 0.2em;
 	font-family: Fira Code;
 	font-weight: bold;
-	font-size: ${({ size }: CTAProps) => sizeMapper[size]};
+	font-size: ${({ size }) => sizeMapper[size]};
 	color: ${({ theme }) => theme.color__gray};
 	transition: 450ms ease-in-out all;
 	text-decoration: none;
 
 	${({ type }) => type === 'outlined' && lightCtaCss};
+
+	${({ type }) => type === 'dimmed' && dimmedCtaCss};
 
 	&:hover {
 		cursor: pointer;

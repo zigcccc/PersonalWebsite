@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
 export const StyledSection = styled.section`
-	padding: 10rem 0;
+	padding: 9rem 0;
+
+	&.centered {
+		text-align: center;
+	}
 `;

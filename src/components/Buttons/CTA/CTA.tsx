@@ -10,6 +10,7 @@ export interface CTAProps {
 	presentation: 'primary' | 'light' | 'dark';
 	size: 'small' | 'medium' | 'large';
 	target?: '_blank' | '_self';
+	lightText?: Boolean;
 }
 
 /**
@@ -25,4 +26,5 @@ CTA.defaultProps = {
 	type: 'primary',
 	presentation: 'primary',
 	size: 'medium',
+	lightText: false,
 };
