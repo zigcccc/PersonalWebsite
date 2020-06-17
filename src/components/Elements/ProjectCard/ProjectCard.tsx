@@ -2,6 +2,7 @@ import React from 'react';
 
 import { CTA } from '../../Buttons';
 import { Spacer } from '../../Layout';
+import { Image } from '../Image/Image';
 
 import { StyledProjectCard } from './Styles';
 
@@ -33,7 +34,7 @@ export const ProjectCard = ({
 }: ProjectCardProps) => (
 	<StyledProjectCard company={company} dark={dark} className="project-card">
 		<div className="project-card--artwork">
-			<img src={artwork} alt={title} />
+			<Image path={artwork} alt={title} />
 		</div>
 		<div className="project-card--content">
 			<h4 className="project-card--subtitle">{subtitle}</h4>

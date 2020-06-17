@@ -36,7 +36,7 @@ const projects = [
 			'Online marketplace for food providers and consumers. I am the lead frontend developer for the project.',
 		techStack: ['React Native', 'Redux', 'Styled Components', 'React Navigation'],
 		dark: false,
-		artwork: '/images/optifarm_smart_mockup.png',
+		artwork: '/images/optifarm_smart_mockup',
 		cta: {
 			url: 'https://www.optifarm.net/',
 			text: 'Download the app',
@@ -50,7 +50,7 @@ const projects = [
 			'My diploma thesis project. Fullstack application designed to made managing website with accommodations easy.',
 		techStack: ['React', 'Redux', 'Styled Components', 'React Router', 'Laravel'],
 		dark: false,
-		artwork: '/images/tourdash.png',
+		artwork: '/images/tourdash',
 		cta: {
 			url: 'https://github.com/zigcccc/TourDash',
 			text: 'View on GitHub',
@@ -64,7 +64,7 @@ const projects = [
 			'Online marketplace for food providers and consumers. I am the lead frontend developer for the project.',
 		techStack: ['React', 'Redux', 'Styled Components', 'React Router'],
 		dark: true,
-		artwork: '/images/of-dash.png',
+		artwork: '/images/of-dash',
 		cta: {
 			url: 'https://www.optifarm.net/',
 			text: 'Visit the website',
@@ -78,7 +78,7 @@ const projects = [
 			'Custom Wordpress theme development. I designed and than developed a highly personalized Wordpress theme, which not only looks great but is performant as well',
 		techStack: ['Wordpress', 'PHP', 'Sass', 'Webpack'],
 		dark: false,
-		artwork: '/images/promotiva-mockup.png',
+		artwork: '/images/promotiva-mockup',
 		cta: {
 			url: 'https://promotiva.si',
 			text: 'Visit the website',
