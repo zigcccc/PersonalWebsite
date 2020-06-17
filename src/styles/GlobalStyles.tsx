@@ -8,7 +8,12 @@ export const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
 		@media screen and (max-width: 768px) {
 			font-size: 14px;
 		}
+
+		@media screen and (max-width: 320px) {
+			font-size: 13px;
+		}
 	}
+	
 	body {
 		background-color: ${({ theme }) => theme.bg};
 		color: ${({ theme }) => theme.fg};

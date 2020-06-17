@@ -50,4 +50,9 @@ export const StyledTechBadge = styled.div<Pick<TechBadgeProps, 'tech'>>`
 	font-size: 10rem;
 	display: inline-flex;
 	padding: 2.125rem;
+
+	@media screen and (max-width: 768px) {
+		font-size: 8rem;
+		border-radius: 20px;
+	}
 `;

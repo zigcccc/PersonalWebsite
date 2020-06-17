@@ -21,6 +21,12 @@ export const StyledBanner = styled.section`
 	@media screen and (max-width: 768px) {
 		padding-left: 1.5rem;
 		padding-right: 1.5rem;
+		padding-top: 70px;
+	}
+
+	@media screen and (max-width: 320px) {
+		height: 65vh;
+		position: relative;
 	}
 
 	h1 {
@@ -37,6 +43,10 @@ export const StyledBanner = styled.section`
 		span {
 			font-weight: 700;
 			position: relative;
+
+			@media screen and (max-width: 320px) {
+				white-space: nowrap;
+			}
 
 			&::after {
 				content: '';

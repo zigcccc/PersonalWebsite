@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { scrollPastRef } from '../../../utils/functions';
+
 import { StyledBanner } from './Styles';
 import { CTA } from '../../Buttons';
 import { LogoMark } from '../../Icons';
@@ -34,11 +36,7 @@ export const Banner = ({ theme }: BannerProps) => {
 	const bannerRef = React.useRef() as React.MutableRefObject<HTMLElement>;
 	const handleCTAClick = (event: any) => {
 		event.preventDefault();
-		const { height } = bannerRef.current.getBoundingClientRect();
-		window.scrollTo({
-			top: height,
-			behavior: 'smooth',
-		});
+		scrollPastRef(bannerRef);
 	};
 	return (
 		<StyledBanner ref={bannerRef}>

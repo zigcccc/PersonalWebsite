@@ -2,6 +2,8 @@ import React from 'react';
 
 import { ThemeProvider } from 'styled-components';
 
+import { scrollToId } from './utils/functions';
+
 import { CTA, ContactButton } from './components/Buttons';
 import { Header, Banner, TechBadge, Footer } from './components/Elements';
 import { Section, Row, Column, ProjectsGrid } from './components/Layout';
@@ -142,7 +144,7 @@ export const App = () => {
 							and UI in terms of how we can influence the user through design and
 							interactions.{' '}
 						</Paragraph>
-						<CTA onClick={() => null}>Let's talk</CTA>
+						<CTA onClick={() => scrollToId('contact')}>Let's talk</CTA>
 					</Column>
 					<Column size={6}>
 						<ComputerThinking />
@@ -209,7 +211,7 @@ export const App = () => {
 							tinkering your mind or about something as common as where to hike on a
 							sunny weekend, I'm up for it.{' '}
 							<strong>I like to share my knowledge</strong>; I know I've learned the
-							most from asking questings and listening to the experts of this field, so
+							most from asking questions and listening to the experts of this field, so
 							if I can give some of this knowledge back, I am more than happy to do so.
 						</Paragraph>
 						<Paragraph>
