@@ -2,7 +2,8 @@ import React from 'react';
 
 import { ThemeProvider } from 'styled-components';
 
-import { scrollToId } from './utils/functions';
+import { scrollToId, logConsoleArt } from './utils/functions';
+import { HELLO_DEV_STR, HELLO_DEV_MESSAGE } from './utils/constants';
 
 import { CTA, ContactButton } from './components/Buttons';
 import { Header, Banner, TechBadge, Footer } from './components/Elements';
@@ -103,6 +104,8 @@ export const App = () => {
 	);
 
 	React.useEffect(() => {
+		logConsoleArt(HELLO_DEV_STR, 8);
+		logConsoleArt(HELLO_DEV_MESSAGE, 16);
 		const userSetTheme = localStorage.getItem('theme') as ThemeOptionType;
 		if (userSetTheme) {
 			setTheme(userSetTheme);
