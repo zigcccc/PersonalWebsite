@@ -127,7 +127,7 @@ export const App = () => {
 			<Banner theme={theme} />
 			<Section id="who">
 				<Row>
-					<Column size={12}>
+					<Column size={12} noMobileSpacing>
 						<SubHeading>Hello, I'm Žiga</SubHeading>
 						<Heading>Who am I?</Heading>
 					</Column>
@@ -198,7 +198,7 @@ export const App = () => {
 			</Section>
 			<Section id="contact">
 				<Row>
-					<Column size={12}>
+					<Column size={12} noMobileSpacing>
 						<SubHeading>Contact forms are boring</SubHeading>
 						<Heading>Connect with me</Heading>
 					</Column>

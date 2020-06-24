@@ -10,15 +10,26 @@ export interface ColumnProps {
 	children: React.ReactChild | React.ReactChild[];
 	size?: TColumnSize;
 	offset?: TColumnOffset;
+	noMobileSpacing?: boolean;
 }
 
-export const Column = ({ children, size, offset }: ColumnProps) => (
+export const Column = ({
+	children,
+	size,
+	offset,
+	noMobileSpacing,
+}: ColumnProps) => (
 	<StyledColumn
 		className={classNames('column col-sm-12', {
 			[`col-md-${size}`]: size,
 			[`col-md-offset-${offset}`]: offset,
+			'column--has-mobile-spacing': !noMobileSpacing,
 		})}
 	>
 		{children}
 	</StyledColumn>
 );
+
+Column.defaultProps = {
+	noMobileSpacing: false,
+};
