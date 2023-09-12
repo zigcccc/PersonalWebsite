@@ -90,7 +90,7 @@ const projects = [
 export const App = () => {
 	const [theme, setTheme] = React.useState('light' as ThemeOptionType);
 
-	const handleThemeSwitch = (event: any) => {
+	const handleThemeSwitch = () => {
 		localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light');
 		setTheme(theme === 'light' ? 'dark' : 'light');
 	};
@@ -128,7 +128,7 @@ export const App = () => {
 			<Section id="who">
 				<Row>
 					<Column size={12} noMobileSpacing>
-						<SubHeading>Hello, I'm Žiga</SubHeading>
+						<SubHeading>Hello, I&apos;m Žiga</SubHeading>
 						<Heading>Who am I?</Heading>
 					</Column>
 				</Row>
@@ -138,16 +138,16 @@ export const App = () => {
 							Creative, open-minded and always thirsty for new knowledge.
 						</Paragraph>
 						<Paragraph>
-							I'm a {new Date().getFullYear() - 1996} years old{' '}
+							I&apos;m a {new Date().getFullYear() - 1996} years old{' '}
 							<strong>frontend developer</strong> with a tendency towards web
-							development and web design in general. I'm always eager to provide a
+							development and web design in general. I&apos;m always eager to provide a
 							smooth and pleasant user experience for the end-user of web (or mobile)
 							application. My weapon of choice is <strong>JavaScript</strong>, more
-							specifically <strong>React.js</strong> framework. I'm interested in UX
+							specifically <strong>React.js</strong> framework. I&apos;m interested in UX
 							and UI in terms of how we can influence the user through design and
 							interactions.{' '}
 						</Paragraph>
-						<CTA onClick={() => scrollToId('contact')}>Let's talk</CTA>
+						<CTA onClick={() => scrollToId('contact')}>Let&apos;s talk</CTA>
 					</Column>
 					<Column size={6}>
 						<ComputerThinking />
@@ -166,7 +166,7 @@ export const App = () => {
 						<Heading>What am I good at?</Heading>
 						<Paragraph>
 							Although my formal education background comes from the design and
-							multimedia area, <strong>I excel at programing</strong> which I've been
+							multimedia area, <strong>I excel at programing</strong> which I&apos;ve been
 							learning since the age of fifteen.
 						</Paragraph>
 						<Paragraph>
@@ -206,21 +206,21 @@ export const App = () => {
 				<Row vAlign="top">
 					<Column size={6}>
 						<Paragraph>
-							I always like a good debate (as long as it's not about the politics{' '}
+							I always like a good debate (as long as it&apos;s not about the politics{' '}
 							<span role="img" aria-label="idk">
 								‍🤷‍♂️
 							</span>
-							). Whether it's about a new uprising technology, a new idea that's
+							). Whether it&apos;s about a new uprising technology, a new idea that&apos;s
 							tinkering your mind or about something as common as where to hike on a
-							sunny weekend, I'm up for it.{' '}
-							<strong>I like to share my knowledge</strong>; I know I've learned the
+							sunny weekend, I&apos;m up for it.{' '}
+							<strong>I like to share my knowledge</strong>; I know I&apos;ve learned the
 							most from asking questions and listening to the experts of this field, so
 							if I can give some of this knowledge back, I am more than happy to do so.
 						</Paragraph>
 						<Paragraph>
 							So, if you think we might have a few words to exchange,{' '}
-							<strong>connect with me</strong> via one of the channels and I'm sure
-							we'll find a common language.
+							<strong>connect with me</strong> via one of the channels and I&apos;m sure
+							we&apos;ll find a common language.
 						</Paragraph>
 					</Column>
 					<Column size={5} offset={1}>
