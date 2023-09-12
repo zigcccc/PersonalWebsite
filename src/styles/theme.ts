@@ -1,4 +1,4 @@
-export const theme_base = Object.freeze({
+export const theme_base = {
 	gray__1: '#333333',
 	gray__2: '#4F4F4F',
 	gray__3: '#828282',
@@ -20,26 +20,24 @@ export const theme_base = Object.freeze({
 	font__heading: '"Fira Mono", monospace',
 	font__body: '"Noto Sans", sans-serif',
 	transition__default: '450ms ease-in-out all',
-});
+};
 
 export type ThemeOptionType = 'light' | 'dark';
 
-export const theme_light = Object.freeze({
+export const theme_light = {
 	fg: theme_base.color__gray,
 	bg: theme_base.color__white,
 	light: theme_base.gray__6,
 	gray__middle: theme_base.gray__3,
 	gray__light: theme_base.gray__4,
-});
+};
 
-export const theme_dark = Object.freeze({
+export const theme_dark = {
 	fg: theme_base.color__white,
 	bg: theme_base.color__gray,
 	light: `${theme_base.color__dark}42`,
 	gray__middle: theme_base.gray__4,
 	gray__light: theme_base.gray__3,
-});
+};
 
-const ThemeType = { ...theme_base, ...theme_light };
-
-export type ThemeType = typeof ThemeType;
+export type ThemeType = typeof theme_base & typeof theme_light;

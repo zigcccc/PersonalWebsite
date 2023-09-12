@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/reset.css';
 import './styles/flexboxgrid.min.css';
-import './styles/helpers.scss';
 import { App } from './App';
 import * as serviceWorker from './serviceWorker';
 
