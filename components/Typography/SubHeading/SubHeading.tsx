@@ -1,18 +1,11 @@
-import React from 'react';
+import { type PropsWithChildren } from 'react';
 
 import { StyledSubHeading } from './Styles';
 
-export type TSubHeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type SubHeadingProps = PropsWithChildren<{
+  tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+}>;
 
-export interface SubHeadingProps {
-  children: React.ReactChild;
-  tag: TSubHeadingTag;
-}
-
-export const SubHeading = ({ children, tag }: SubHeadingProps) => (
+export const SubHeading = ({ children, tag = 'h3' }: SubHeadingProps) => (
   <StyledSubHeading as={tag}>{children}</StyledSubHeading>
 );
-
-SubHeading.defaultProps = {
-  tag: 'h3',
-};

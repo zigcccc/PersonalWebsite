@@ -1,8 +1,4 @@
-import React from 'react';
+import { type PropsWithChildren } from 'react';
 import { StyledProjectsGrid } from './Styles';
 
-export interface ProjectsGridProps {
-  children: React.ReactChild | React.ReactChild[];
-}
-
-export const ProjectsGrid = ({ children }: ProjectsGridProps) => <StyledProjectsGrid>{children}</StyledProjectsGrid>;
+export const ProjectsGrid = ({ children }: PropsWithChildren) => <StyledProjectsGrid>{children}</StyledProjectsGrid>;

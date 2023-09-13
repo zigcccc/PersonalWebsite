@@ -24,7 +24,3 @@ export const Column = ({ children, size, offset, noMobileSpacing }: ColumnProps)
     {children}
   </StyledColumn>
 );
-
-Column.defaultProps = {
-  noMobileSpacing: false,
-};
