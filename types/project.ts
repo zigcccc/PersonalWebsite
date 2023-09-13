@@ -1,3 +1,5 @@
+import { type Image } from 'sanity';
+
 export type Project = {
   company: string;
   title: string;
@@ -5,7 +7,7 @@ export type Project = {
   description: string;
   techStack: string[];
   dark: boolean;
-  artwork: string;
+  artwork: Image;
   cta: {
     url: string;
     text: string;

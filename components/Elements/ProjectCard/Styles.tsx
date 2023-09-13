@@ -23,6 +23,11 @@ export const StyledProjectCard = styled.article<{ $company: string; $dark: boole
     margin-top: -6.5rem;
     transform: translateY(2rem);
     transition: ${({ theme }) => theme.transition__default};
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 
   .project-card--content {
