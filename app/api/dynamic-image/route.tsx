@@ -35,13 +35,22 @@ export const GET = async (request: NextRequest) => {
 
   const base = import.meta.url.replace('file://', '');
 
-  const font = fs.readFileSync(path.join(base, '../../../../public/fonts/FiraMono-Bold.ttf'));
+  let font: Buffer | ArrayBuffer;
+
+  if (process.env.NODE_ENV === 'development') {
+    font = fs.readFileSync(path.join(base, '../../../../public/fonts/FiraMono-Bold.ttf')).buffer;
+  } else {
+    const fontData = fetch(new URL('../../../../public/fonts/FiraMono-Bold.ttf', import.meta.url)).then((res) =>
+      res.arrayBuffer()
+    );
+    font = await fontData;
+  }
 
   const title = searchParams.get('title') ?? "Ziga's Stories";
 
   return new ImageResponse(<OGDynamicImage origin={origin} title={title} />, {
     width: 1200,
     height: 630,
-    fonts: [{ name: 'Fira Mono', data: font.buffer, style: 'normal' }],
+    fonts: [{ name: 'Fira Mono', data: font, style: 'normal' }],
   });
 };
