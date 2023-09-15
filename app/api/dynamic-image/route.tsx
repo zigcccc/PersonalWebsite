@@ -2,6 +2,8 @@ import fs from 'fs';
 import path from 'path';
 import { ImageResponse, type NextRequest } from 'next/server';
 
+export const runtime = 'edge';
+
 const OGDynamicImage = ({ origin, title }: { origin: string; title: string }) => {
   return (
     <div
