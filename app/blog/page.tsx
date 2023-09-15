@@ -12,7 +12,6 @@ import { type BlogPreview } from '@/types/blog';
 
 import { type BlogsPageProps } from './page.types';
 import { BlogCategories, BlogsSearch } from './page.components';
-import Image from 'next/image';
 
 export const generateMetadata = async ({ searchParams }: BlogsPageProps): Promise<Metadata> => {
   const title = searchParams.category ? `${searchParams.category} stories` : 'Stories';
