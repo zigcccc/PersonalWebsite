@@ -40,7 +40,7 @@ export const GET = async (request: NextRequest) => {
   if (process.env.NODE_ENV === 'development') {
     font = fs.readFileSync(path.join(base, '../../../../public/fonts/FiraMono-Bold.ttf')).buffer;
   } else {
-    const fontData = fetch(new URL('../../../../public/fonts/FiraMono-Bold.ttf', import.meta.url)).then((res) =>
+    const fontData = fetch(new URL('../../../public/fonts/FiraMono-Bold.ttf', import.meta.url)).then((res) =>
       res.arrayBuffer()
     );
     font = await fontData;
