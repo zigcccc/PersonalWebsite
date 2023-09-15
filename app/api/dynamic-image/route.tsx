@@ -1,5 +1,5 @@
-import fs from 'fs';
-import path from 'path';
+// import fs from 'fs';
+// import path from 'path';
 import { ImageResponse, type NextRequest } from 'next/server';
 
 export const runtime = 'edge';
@@ -35,18 +35,23 @@ const OGDynamicImage = ({ origin, title }: { origin: string; title: string }) =>
 export const GET = async (request: NextRequest) => {
   const { searchParams, origin } = new URL(request.url);
 
-  const base = import.meta.url.replace('file://', '');
+  // const base = import.meta.url.replace('file://', '');
 
-  let font: Buffer | ArrayBuffer;
+  // let font: Buffer | ArrayBuffer;
 
-  if (process.env.NODE_ENV === 'development') {
-    font = fs.readFileSync(path.join(base, '../../../../public/fonts/FiraMono-Bold.ttf')).buffer;
-  } else {
-    const fontData = fetch(new URL('../../../public/fonts/FiraMono-Bold.ttf', import.meta.url)).then((res) =>
-      res.arrayBuffer()
-    );
-    font = await fontData;
-  }
+  // if (process.env.NODE_ENV === 'development') {
+  //   font = fs.readFileSync(path.join(base, '../../../../public/fonts/FiraMono-Bold.ttf')).buffer;
+  // } else {
+  //   const fontData = fetch(new URL('../../../public/fonts/FiraMono-Bold.ttf', import.meta.url)).then((res) =>
+  //     res.arrayBuffer()
+  //   );
+  //   font = await fontData;
+  // }
+
+  const fontData = fetch(new URL('../../../public/fonts/FiraMono-Bold.ttf', import.meta.url)).then((res) =>
+    res.arrayBuffer()
+  );
+  const font = await fontData;
 
   const title = searchParams.get('title') ?? "Ziga's Stories";
 
