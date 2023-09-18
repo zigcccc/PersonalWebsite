@@ -4,10 +4,15 @@ import { PortableText } from '@portabletext/react';
 import { useCallback, useEffect } from 'react';
 import { TwitterTweetEmbed } from 'react-twitter-embed';
 import { type TypedObject } from 'sanity';
+import Image from 'next/image';
+import { useNextSanityImage } from 'next-sanity-image';
 
 import { BlogCard } from '@/components/Elements/BlogCard';
 
 import { useAppTheme } from '@/context/theme';
+
+import { client } from '@/sanity/lib/client';
+import { ImageWithBlurHash } from '@/types/image';
 
 export const BlogQuote = ({ excerpt }: { excerpt: string }) => (
   <cite className="relative">
@@ -39,11 +44,26 @@ export const TwitterEmbedPreview = ({ url }: { url: string }) => {
   );
 };
 
+export const InlineImage = ({ image, alt }: { image: ImageWithBlurHash; alt: string }) => {
+  const imageProps = useNextSanityImage(client, image);
+
+  if (!imageProps) {
+    return null;
+  }
+
+  return (
+    <div className="">
+      <Image {...imageProps} alt={alt} placeholder="blur" blurDataURL={image.asset.metadata.blurHash} />
+    </div>
+  );
+};
+
 export const BlogBody = ({ body }: { body: TypedObject[] }) => (
   <PortableText
     value={body}
     components={{
       types: {
+        inlineImage: ({ value }) => <InlineImage image={value.image} alt={value.alt} />,
         twitter: ({ value }) => <TwitterEmbedPreview url={value.url} />,
         blog: ({ value }) => <BlogCard isCondensed blogPreview={value} />,
       },

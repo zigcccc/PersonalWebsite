@@ -26,7 +26,16 @@ const getBlogPost = async (slug: string) => {
             "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 ),
           },
           _type != "blog" => @
-        }
+        },
+        _type == "inlineImage" => {
+          ...,
+          image {
+            asset->{
+              ...,
+              metadata
+            }
+          }
+        },
       }
     }
   `);
@@ -74,9 +83,9 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
   return (
     <>
       <BlogViewCounter blogId={post._id} />
-      <div className="max-w-2xl mx-auto">
+      <div className="max-w-2xl mx-auto mt-12">
         <article className="leading-8">
-          <h1 className="font-mono font-bold text-3xl mb-8">{post.title}</h1>
+          <h1 className="font-mono font-bold text-4xl mb-8">{post.title}</h1>
           <BlogQuote excerpt={post.excerpt} />
           <hr className="border-white/50 mt-7" />
           <div className="[&>p]:my-7">

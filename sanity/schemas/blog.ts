@@ -1,4 +1,5 @@
 import { defineField, defineType } from 'sanity';
+import { InlineImagePreview } from './objects/image';
 
 import { TwitterEmbedPreview } from './objects/twitter';
 
@@ -45,6 +46,7 @@ const BlogSchema = defineType({
       title: 'Content',
       of: [
         { type: 'block' },
+        { type: 'inlineImage', components: { preview: InlineImagePreview } },
         { type: 'reference', title: 'Blog reference', to: [{ type: 'blog' }] },
         { type: 'twitter', components: { preview: TwitterEmbedPreview } },
       ],

@@ -88,7 +88,7 @@ export const SectionStories = ({ blogs }: { blogs: BlogPreview[] }) => (
   <Section id="stories" centered>
     <SubHeading>I write... sometimes :)</SubHeading>
     <Heading>My recent stories</Heading>
-    <div className="mb-12 grid grid-cols-2 gap-6">
+    <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-6">
       {blogs.map((blogPreview) => (
         <BlogCard key={blogPreview._id} blogPreview={blogPreview} />
       ))}
