@@ -7,7 +7,7 @@ export const useDynamicSearchParams = () => {
   const pathname = usePathname();
   const router = useRouter();
 
-  const handleToggleParam = (param: string, newValue: string) => {
+  const handleToggleParam = (param: string, newValue: string, { scroll } = { scroll: false }) => {
     const current = new URLSearchParams(Array.from(params.entries()));
 
     if (!newValue) {
@@ -19,7 +19,7 @@ export const useDynamicSearchParams = () => {
     const queryString = current.toString();
     const query = queryString ? `?${queryString}` : '';
 
-    router.push(`${pathname}${query}`);
+    router.push(`${pathname}${query}`, { scroll });
   };
 
   return {

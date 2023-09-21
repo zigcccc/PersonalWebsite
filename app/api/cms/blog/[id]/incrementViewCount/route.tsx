@@ -2,9 +2,8 @@ import { NextResponse, type NextRequest } from 'next/server';
 
 import { client } from '@/sanity/lib/client';
 
-export const PATCH = async (request: NextRequest) => {
-  const { searchParams } = new URL(request.url);
-  const blogId = searchParams.get('id');
+export const PATCH = async (_: NextRequest, { params }: { params: { id: string } }) => {
+  const { id: blogId } = params;
 
   if (!blogId) {
     return;

@@ -9,7 +9,7 @@ export const InlineImagePreview = ({ image, alt }: { image: SanityImage; alt: st
   const img = useNextSanityImage(client, image);
 
   if (!img) {
-    return 'No image added yet';
+    return <>No image added yet</>;
   }
 
   return <Image {...img} alt={alt} />;

@@ -13,6 +13,9 @@ import { type BlogPreview } from '@/types/blog';
 import { type BlogsPageProps } from './page.types';
 import { BlogCategories, BlogsSearch } from './page.components';
 
+// Revalidate cache every 5h
+export const revalidate = 60 * 60 * 5;
+
 export const generateMetadata = async ({ searchParams }: BlogsPageProps): Promise<Metadata> => {
   const title = searchParams.category ? `${searchParams.category} stories` : 'Stories';
 

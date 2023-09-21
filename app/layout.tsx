@@ -1,6 +1,8 @@
+import { Analytics } from '@vercel/analytics/react';
 import { Metadata } from 'next';
 import { type PropsWithChildren } from 'react';
 
+import { ReactQueryProvider } from './react-query';
 import { ThemeProvider } from './theme';
 
 import '@/styles/reset.css';
@@ -18,7 +20,10 @@ export const metadata: Metadata = {
 const RootLayout = ({ children }: PropsWithChildren) => (
   <html lang="en">
     <body>
-      <ThemeProvider>{children}</ThemeProvider>
+      <ReactQueryProvider>
+        <ThemeProvider>{children}</ThemeProvider>
+      </ReactQueryProvider>
+      <Analytics />
     </body>
   </html>
 );

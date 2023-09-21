@@ -5,6 +5,8 @@ import { Header } from '@/components/Elements/Header';
 import { Banner } from '@/components/Elements/Banner';
 import { Footer } from '@/components/Elements/Footer';
 
+import { blogPreviewQuery } from '@/queries/blogs';
+
 import { client } from '@/sanity/lib/client';
 
 import { type BlogPreview } from '@/types/blog';
@@ -19,6 +21,9 @@ const sections = [
   { label: 'Stories', id: 'stories' },
 ];
 
+// Revalidate cache every 5h
+export const revalidate = 60 * 60 * 5;
+
 export const metadata: Metadata = {
   description:
     "I'm a frontend developer with a tendency towards web development and web design in general. I'm always eager to provide a smooth and pleasant user experience for the end-user of web (or mobile) application.",
@@ -26,18 +31,9 @@ export const metadata: Metadata = {
 
 const HomePage = async () => {
   const projects = await client.fetch<Project[]>(groq`*[_type == 'project'] | order(_createdAt desc)`);
-  const blogs = await client.fetch<BlogPreview[]>(groq`
-    *[_type == 'blog'] | order(_createdAt desc)[0..4] {
-      _id,
-      _createdAt,
-      title,
-      category->{ name, icon },
-      "slug": slug.current,
-      excerpt,
-      viewCount,
-      "estimatedReadingTime": round(length(pt::text(body)) / 5 / 180 )
-    }
-  `);
+  const blogs = await client.fetch<BlogPreview[]>(
+    groq`*[_type == 'blog'] | order(_createdAt desc)[0..4] {${blogPreviewQuery}}`
+  );
 
   return (
     <>

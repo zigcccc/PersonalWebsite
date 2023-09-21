@@ -4,8 +4,14 @@ module.exports = {
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
+    './sanity/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   darkMode: 'class',
+  variants: {
+    extend: {
+      opacity: ['hover', 'group-hover'],
+    },
+  },
   theme: {
     fontFamily: {
       sans: ['Noto Sans', 'sans-serif'],
@@ -35,4 +41,7 @@ module.exports = {
   },
   safelist: ['bg-white', 'text-3xl', 'lg:text-4xl'],
   plugins: [],
+  corePlugins: {
+    preflight: false,
+  },
 };

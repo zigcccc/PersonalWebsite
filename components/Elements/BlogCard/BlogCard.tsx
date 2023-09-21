@@ -1,14 +1,21 @@
 'use client';
 import WatchFilledIcon from '@atlaskit/icon/glyph/watch-filled';
+import dayjs from 'dayjs';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import { urlForImage } from '@/sanity/lib/image';
 
 import { type BlogCardProps } from './BlogCard.types';
-import dayjs from 'dayjs';
+import { useQuery } from '@tanstack/react-query';
 
-export const BlogCard = ({ blogPreview, isCondensed = false }: BlogCardProps) => {
+export const BlogCard = ({ blogPreview: _blogPreview, isCondensed = false }: BlogCardProps) => {
+  const { data: blogPreview } = useQuery({
+    queryFn: () => fetch(`/api/cms/blog/${_blogPreview._id}?style=preview`).then((res) => res.json()),
+    queryKey: ['Blog', _blogPreview._id],
+    enabled: !!_blogPreview,
+    initialData: _blogPreview,
+  });
   const categoryImage = urlForImage(blogPreview.category.icon).size(24, 24).fit('max').url();
   const publishedAt = dayjs(blogPreview._createdAt).format('MMM D, YYYY');
 
