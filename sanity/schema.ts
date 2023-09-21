@@ -1,7 +1,19 @@
 import { type SchemaTypeDefinition } from 'sanity';
 
+import BlogSchema from './schemas/blog';
+import CategorySchema from './schemas/category';
+import InlineImageObjectSchema from './schemas/objects/image';
+import LinkPreviewObjectSchema from './schemas/objects/linkPreview';
+import TwitterObjectSchema from './schemas/objects/twitter';
 import ProjectSchema from './schemas/project';
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [ProjectSchema],
+  types: [
+    ProjectSchema,
+    BlogSchema,
+    CategorySchema,
+    TwitterObjectSchema,
+    InlineImageObjectSchema,
+    LinkPreviewObjectSchema,
+  ],
 };

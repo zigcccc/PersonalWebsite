@@ -2,13 +2,16 @@
 
 import { ContactButton, CTA } from '@/components/Buttons';
 import { ProjectCard, TechBadge, type TechType } from '@/components/Elements';
+import { BlogCard } from '@/components/Elements/BlogCard';
 import { ComputerThinking } from '@/components/Graphics';
 import { Column, ProjectsGrid, Row, Section } from '@/components/Layout';
 import { SubHeading, Heading, Paragraph } from '@/components/Typography';
 
+import { type BlogPreview } from '@/types/blog';
 import { type Project } from '@/types/project';
 
 import { scrollToId } from '@/utils/functions';
+import Link from 'next/link';
 
 export const SectionWho = () => (
   <Section id="who">
@@ -78,6 +81,21 @@ export const SectionDone = ({ projects }: { projects: Project[] }) => (
     <CTA href="https://github.com/zigcccc/" target="_blank">
       My GitHub profile
     </CTA>
+  </Section>
+);
+
+export const SectionStories = ({ blogs }: { blogs: BlogPreview[] }) => (
+  <Section id="stories" centered>
+    <SubHeading>I write... sometimes :)</SubHeading>
+    <Heading>My recent stories</Heading>
+    <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+      {blogs.map((blogPreview) => (
+        <BlogCard key={blogPreview._id} blogPreview={blogPreview} />
+      ))}
+    </div>
+    <Link href="/blog" passHref legacyBehavior>
+      <CTA>See all stories</CTA>
+    </Link>
   </Section>
 );
 
