@@ -5,7 +5,10 @@ export const StyledProjectCard = styled.article<{ $company: string; $dark: boole
   display: grid;
   grid-template-columns: 2fr 3fr;
   grid-gap: 1.875rem;
-  background-color: ${({ $company, theme }) => theme[`color__${$company}`]};
+  background-color: ${({ $company, theme }) => {
+    // @ts-expect-error
+    return theme[`color__${$company}`];
+  }};
   border-radius: 10px;
   color: ${({ $dark, theme }) => ($dark ? theme.color__gray : theme.color__white)};
 

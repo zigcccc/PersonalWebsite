@@ -17,10 +17,11 @@ export const theme_base = {
   color__ofadmin: '#FBF9F4',
   color__promotiva: '#00AEEF',
   color__ofmobile: '#68985c',
+  color__personal: '#FFFFFF',
   font__heading: '"Fira Mono", monospace',
   font__body: '"Noto Sans", sans-serif',
   transition__default: '450ms ease-in-out all',
-};
+} as const;
 
 export type ThemeOptionType = 'light' | 'dark';
 

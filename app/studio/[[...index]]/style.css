@@ -1,0 +1,6 @@
+/** Override styles from the client-facing part of the app  */
+
+.sanity-studio svg {
+  max-width: unset;
+  height: unset;
+}

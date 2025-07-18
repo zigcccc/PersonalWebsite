@@ -10,11 +10,12 @@ import StyledComponentsRegistry from '@/styles/registry';
 
 const themeConfigMap: Record<ThemeOptionType, ThemeType> = {
   light: { ...theme_base, ...theme_light },
+  // @ts-expect-error
   dark: { ...theme_base, ...theme_dark },
 };
 
 export const ThemeProvider = ({ children }: PropsWithChildren) => {
-  const [theme, setTheme] = useState<ThemeOptionType>('light');
+  const [theme, setTheme] = useState<ThemeOptionType | null>(null);
 
   const handleThemeSwitch = () => {
     localStorage.setItem('theme', theme === 'light' ? 'dark' : 'light');
@@ -30,12 +31,19 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
     }
   }, []);
 
+  if (!theme) {
+    return null;
+  }
+
   return (
     <StyledComponentsRegistry>
+      {/* @ts-ignore */}
       <StyledThemeProvider theme={themeConfigMap[theme]}>
         <AppThemeContext.Provider value={{ onToggleTheme: handleThemeSwitch, theme }}>
-          <GlobalStyle />
-          {children}
+          <main className={theme === 'dark' ? 'dark' : ''}>
+            <GlobalStyle />
+            {children}
+          </main>
         </AppThemeContext.Provider>
       </StyledThemeProvider>
     </StyledComponentsRegistry>

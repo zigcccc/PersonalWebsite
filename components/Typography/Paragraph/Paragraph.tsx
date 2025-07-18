@@ -1,9 +1,5 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 
 import { StyledParagraph } from './Styles';
 
-export interface ParagraphProps {
-  children: React.ReactChild | React.ReactChild[];
-}
-
-export const Paragraph = ({ children }: ParagraphProps) => <StyledParagraph>{children}</StyledParagraph>;
+export const Paragraph = ({ children }: PropsWithChildren) => <StyledParagraph>{children}</StyledParagraph>;

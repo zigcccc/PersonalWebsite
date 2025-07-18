@@ -22,11 +22,7 @@ export const Switcher = () => {
         checked={theme === 'dark'}
       />
       <label htmlFor="toggle"></label>
-      <div
-        className={classNames('switcher--icon', {
-          'switcher--icon__left': theme === 'dark',
-        })}
-      >
+      <div className={classNames('switcher--icon', { 'switcher--icon__left': theme === 'dark' })}>
         {theme === 'dark' ? <Moon /> : <Sun />}
       </div>
     </StyledSwitcher>
