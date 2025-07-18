@@ -11,7 +11,7 @@ import { type BlogPostPageProps } from './page.types';
 import { getBlogPost } from './page.helpers';
 
 // Revalidate cache every 5h
-export const revalidate = 60 * 60 * 5;
+export const revalidate = 18_000;
 
 export const generateMetadata = async ({ params }: BlogPostPageProps): Promise<Metadata | undefined> => {
   const { slug: slugParam } = await params;

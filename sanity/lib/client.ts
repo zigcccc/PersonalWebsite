@@ -8,5 +8,4 @@ export const client = createClient({
   dataset,
   projectId,
   useCdn,
-  studioUrl: '/studio',
 });

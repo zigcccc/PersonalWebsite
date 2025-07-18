@@ -21,7 +21,7 @@ export const theme_base = {
   font__heading: '"Fira Mono", monospace',
   font__body: '"Noto Sans", sans-serif',
   transition__default: '450ms ease-in-out all',
-};
+} as const;
 
 export type ThemeOptionType = 'light' | 'dark';
 

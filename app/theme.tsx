@@ -10,6 +10,7 @@ import StyledComponentsRegistry from '@/styles/registry';
 
 const themeConfigMap: Record<ThemeOptionType, ThemeType> = {
   light: { ...theme_base, ...theme_light },
+  // @ts-expect-error
   dark: { ...theme_base, ...theme_dark },
 };
 

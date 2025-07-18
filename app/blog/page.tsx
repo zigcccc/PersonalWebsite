@@ -14,7 +14,7 @@ import { type BlogsPageProps } from './page.types';
 import { BlogCategories, BlogsSearch } from './page.components';
 
 // Revalidate cache every 5h
-export const revalidate = 60 * 60 * 5;
+export const revalidate = 18_000;
 
 export const generateMetadata = async ({ searchParams }: BlogsPageProps): Promise<Metadata> => {
   const { category } = await searchParams;

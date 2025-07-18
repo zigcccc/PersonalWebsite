@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import classNames from 'classnames';
 
 import { StyledColumn } from './Styles';
@@ -6,12 +6,11 @@ import { StyledColumn } from './Styles';
 export type TColumnSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 export type TColumnOffset = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11;
 
-export interface ColumnProps {
-  children: React.ReactChild | React.ReactChild[];
+export type ColumnProps = PropsWithChildren<{
   size?: TColumnSize;
   offset?: TColumnOffset;
   noMobileSpacing?: boolean;
-}
+}>;
 
 export const Column = ({ children, size, offset, noMobileSpacing }: ColumnProps) => (
   <StyledColumn

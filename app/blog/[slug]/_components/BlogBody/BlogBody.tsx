@@ -88,7 +88,7 @@ const LinkPreview = ({ url }: { url: string }) => {
       className="no-underline block rounded overflow-hidden border border-solid border-gray-4 dark:border-gray-3 my-6"
       href={url}
       target="_blank"
-     >
+    >
       <div className="relative h-[175px] md:h-[300px]">
         <Image layout="fill" objectFit="cover" src={image} alt={data.title ?? data.url} />
       </div>
