@@ -10,7 +10,7 @@ import { NavbarSegments } from './layout.components';
 const BlogLayout = ({ children }: PropsWithChildren) => (
   <>
     <header className="flex justify-between p-5">
-      <Link href="/">
+      <Link href="/" legacyBehavior>
         <LetterMark height={35} />
       </Link>
       <nav className="nav flex-1 justify-end md:justify-between flex items-center">

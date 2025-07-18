@@ -75,7 +75,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
             <Link
               className="flex flex-col p-8 no-underline hover:bg-dark/5 hover:dark:bg-white/10 transition-all"
               href="/blog"
-            >
+              legacyBehavior>
               <span className="text-xs text-dark dark:text-white flex items-center gap-2">
                 There are no other posts
               </span>

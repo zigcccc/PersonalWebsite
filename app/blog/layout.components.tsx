@@ -11,7 +11,10 @@ export const NavbarSegments = () => {
 
   return (
     <div className="pl-3 font-mono font-bold">
-      <Link className="text-gray dark:text-white visited:text-gray visited:dark:text-white no-underline" href="/blog">
+      <Link
+        className="text-gray dark:text-white visited:text-gray visited:dark:text-white no-underline"
+        href="/blog"
+        legacyBehavior>
         <span>&gt; My stories</span>
       </Link>
     </div>
