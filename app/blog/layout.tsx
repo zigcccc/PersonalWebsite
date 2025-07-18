@@ -20,7 +20,7 @@ const BlogLayout = ({ children }: PropsWithChildren) => (
         <Switcher />
       </nav>
     </header>
-    <div className="px-4 md:px-0 pb-12">{children}</div>
+    <div className="px-5 md:px-0 pb-12">{children}</div>
     <Footer />
   </>
 );

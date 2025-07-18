@@ -36,6 +36,7 @@ export const ThemeProvider = ({ children }: PropsWithChildren) => {
 
   return (
     <StyledComponentsRegistry>
+      {/* @ts-ignore */}
       <StyledThemeProvider theme={themeConfigMap[theme]}>
         <AppThemeContext.Provider value={{ onToggleTheme: handleThemeSwitch, theme }}>
           <main className={theme === 'dark' ? 'dark' : ''}>

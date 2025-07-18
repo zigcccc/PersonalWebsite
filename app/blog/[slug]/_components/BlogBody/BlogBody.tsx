@@ -105,7 +105,7 @@ const LinkPreview = ({ url }: { url: string }) => {
 const LinkableH2 = ({ children, text }: PropsWithChildren<{ text: string }>) => {
   const slug = slugify(text);
   return (
-    <h2 id={slug} className="font-mono font-bold text-xl mb-4 mt-8 relative group">
+    <h2 id={slug} className="font-mono font-bold text-2xl mb-4 mt-12 relative group">
       <a
         className="text-white mr-1 absolute -left-7 top-[3px] opacity-0 group-hover:opacity-100 transition-opacity"
         href={`#${slug}`}
@@ -120,7 +120,7 @@ const LinkableH2 = ({ children, text }: PropsWithChildren<{ text: string }>) => 
 const LinkableH3 = ({ children, text }: PropsWithChildren<{ text: string }>) => {
   const slug = slugify(text);
   return (
-    <h3 id={slug} className="font-mono font-bold text-lg mb-4 mt-6 relative group">
+    <h3 id={slug} className="font-mono font-bold text-lg mb-4 mt-8 relative group">
       <a
         className="text-white mr-1 absolute -left-7 top-[3px] opacity-0 group-hover:opacity-100 transition-opacity"
         href={`#${slug}`}
