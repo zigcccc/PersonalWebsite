@@ -25,7 +25,7 @@ export const BlogRelatedPreview = ({ blogPreview, direction }: BlogRelatedPrevie
         alignClassName
       )}
       href={href}
-      legacyBehavior>
+     >
       <span className="text-xs text-dark dark:text-white flex items-center gap-2">{getLinkLabel()}</span>
       <span className="text-lg font-mono font-bold text-dark dark:text-white truncate">
         {blogPreview?.title || 'Back to all stories'}

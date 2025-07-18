@@ -14,7 +14,8 @@ import { getBlogPost } from './page.helpers';
 export const revalidate = 60 * 60 * 5;
 
 export const generateMetadata = async ({ params }: BlogPostPageProps): Promise<Metadata | undefined> => {
-  const { post } = await getBlogPost(params.slug);
+  const { slug: slugParam } = await params;
+  const { post } = await getBlogPost(slugParam);
 
   if (!post) {
     return;
@@ -44,7 +45,8 @@ export const generateMetadata = async ({ params }: BlogPostPageProps): Promise<M
 };
 
 const BlogPostPage = async ({ params }: BlogPostPageProps) => {
-  const { post, nextPost, previousPost } = await getBlogPost(params.slug);
+  const { slug } = await params;
+  const { post, nextPost, previousPost } = await getBlogPost(slug);
 
   if (!post) {
     redirect('/not-found');
@@ -75,7 +77,7 @@ const BlogPostPage = async ({ params }: BlogPostPageProps) => {
             <Link
               className="flex flex-col p-8 no-underline hover:bg-dark/5 hover:dark:bg-white/10 transition-all"
               href="/blog"
-              legacyBehavior>
+            >
               <span className="text-xs text-dark dark:text-white flex items-center gap-2">
                 There are no other posts
               </span>

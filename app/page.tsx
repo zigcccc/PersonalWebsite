@@ -23,6 +23,7 @@ const sections = [
 
 // Revalidate cache every 5h
 export const revalidate = 60 * 60 * 5;
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   description:

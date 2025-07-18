@@ -36,6 +36,7 @@ module.exports = {
         ofadmin: '#FBF9F4',
         promotiva: '#00AEEF',
         ofmobile: '#68985c',
+        personal: '#FFFFFF',
       },
     },
   },

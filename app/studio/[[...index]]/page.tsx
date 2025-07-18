@@ -13,6 +13,8 @@ import sanityConfig from '@/sanity.config';
 
 import './style.css';
 
+export const dynamic = 'force-static';
+
 export default function StudioPage() {
   return (
     <div className="sanity-studio">

@@ -93,8 +93,8 @@ export const SectionStories = ({ blogs }: { blogs: BlogPreview[] }) => (
         <BlogCard key={blogPreview._id} blogPreview={blogPreview} />
       ))}
     </div>
-    <Link href="/blog" passHref legacyBehavior>
-      <CTA>See all stories</CTA>
+    <Link href="/blog">
+      <CTA as="span">See all stories</CTA>
     </Link>
   </Section>
 );

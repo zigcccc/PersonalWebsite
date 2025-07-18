@@ -2,8 +2,8 @@ import { NextResponse, type NextRequest } from 'next/server';
 
 import { client } from '@/sanity/lib/client';
 
-export const PATCH = async (_: NextRequest, { params }: { params: { id: string } }) => {
-  const { id: blogId } = params;
+export const PATCH = async (_: NextRequest, { params }: { params: Promise<{ id: string }> }) => {
+  const { id: blogId } = await params;
 
   if (!blogId) {
     return NextResponse.json({ error: 'No blog id provided' }, { status: 400 });

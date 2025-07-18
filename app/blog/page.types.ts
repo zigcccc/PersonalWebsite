@@ -1,6 +1,6 @@
 export type BlogsPageProps = {
-  searchParams: {
+  searchParams: Promise<{
     search?: string;
     category?: string;
-  };
+  }>;
 };

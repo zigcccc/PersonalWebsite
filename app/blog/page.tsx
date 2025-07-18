@@ -17,7 +17,8 @@ import { BlogCategories, BlogsSearch } from './page.components';
 export const revalidate = 60 * 60 * 5;
 
 export const generateMetadata = async ({ searchParams }: BlogsPageProps): Promise<Metadata> => {
-  const title = searchParams.category ? `${searchParams.category} stories` : 'Stories';
+  const { category } = await searchParams;
+  const title = category ? `${category} stories` : 'Stories';
 
   return {
     title,
@@ -27,11 +28,12 @@ export const generateMetadata = async ({ searchParams }: BlogsPageProps): Promis
 };
 
 const BlogsPage = async ({ searchParams }: BlogsPageProps) => {
+  const { search, category } = await searchParams;
   const blogs = await client.fetch<BlogPreview[]>(groq`
     *[
       _type == 'blog'
-      ${searchParams.search ? ` && title match "${searchParams.search}*"` : ''}
-      ${searchParams.category ? ` && category->name == "${searchParams.category}"` : ''}
+      ${search ? ` && title match "${search}*"` : ''}
+      ${category ? ` && category->name == "${category}"` : ''}
     ] | order(_createdAt desc)[0..4] {
       _id,
       _createdAt,
@@ -72,8 +74,10 @@ const BlogsPage = async ({ searchParams }: BlogsPageProps) => {
             <h2 className="font-mono font-bold text-2xl">Dang it...</h2>
             <p>There are no stories matching your search criteria.</p>
           </div>
-          <Link href="/blog" passHref legacyBehavior>
-            <CTA size="small">Show all stories</CTA>
+          <Link href="/blog">
+            <CTA as="span" size="small">
+              Show all stories
+            </CTA>
           </Link>
         </div>
       )}

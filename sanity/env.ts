@@ -20,4 +20,4 @@ export const projectId = assertValue(
 
 export const baseUrl = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`;
 
-export const useCdn = true;
+export const useCdn = false;
